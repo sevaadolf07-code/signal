@@ -3,7 +3,7 @@
 # and emits the Worker to `.output/server/index.mjs` with static assets in
 # `.output/public/`. Wrangler serves them together.
 
-name = "signal-pulse"
+name = "signal"
 main = ".output/server/index.mjs"
 compatibility_date = "2024-11-06"
 compatibility_flags = ["nodejs_compat"]
