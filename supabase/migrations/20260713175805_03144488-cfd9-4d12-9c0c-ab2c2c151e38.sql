@@ -1,0 +1,1 @@
+CREATE POLICY "Anyone can delete by endpoint" ON public.push_subscriptions FOR DELETE USING (true);

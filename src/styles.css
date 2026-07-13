@@ -1,0 +1,304 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Signal Pulse — Telegram-inspired light theme for crypto & forex signals.
+ * All colors use oklch. Do NOT hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 250);
+  /* Telegram blue #229ED9 */
+  --primary: oklch(0.66 0.14 236);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.01 240);
+  --secondary-foreground: oklch(0.22 0.03 250);
+  --muted: oklch(0.97 0.01 240);
+  --muted-foreground: oklch(0.55 0.02 250);
+  --accent: oklch(0.96 0.03 236);
+  --accent-foreground: oklch(0.35 0.15 236);
+  --destructive: oklch(0.63 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.93 0.01 250);
+  --input: oklch(0.94 0.01 250);
+  --ring: oklch(0.66 0.14 236);
+  --success: oklch(0.66 0.17 152);
+  --success-foreground: oklch(1 0 0);
+  --success-soft: oklch(0.95 0.06 152);
+  --danger: oklch(0.63 0.22 27);
+  --danger-foreground: oklch(1 0 0);
+  --danger-soft: oklch(0.96 0.05 27);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 250);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.22 0.02 250);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.22 0.02 250);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.72 0.14 236);
+  --primary-foreground: oklch(0.15 0.02 250);
+  --secondary: oklch(0.28 0.02 250);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.28 0.02 250);
+  --muted-foreground: oklch(0.72 0.02 250);
+  --accent: oklch(0.32 0.05 236);
+  --accent-foreground: oklch(0.98 0.005 250);
+  --destructive: oklch(0.7 0.19 22);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.72 0.14 236);
+  --success: oklch(0.72 0.17 152);
+  --success-foreground: oklch(0.15 0.02 250);
+  --success-soft: oklch(0.32 0.08 152);
+  --danger: oklch(0.7 0.19 22);
+  --danger-foreground: oklch(1 0 0);
+  --danger-soft: oklch(0.32 0.08 22);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* Persian numerals feel native */
+    font-feature-settings: "ss02", "cv11";
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    background: color-mix(in oklab, var(--background) 82%, transparent);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  .card-elevated {
+    box-shadow:
+      0 1px 2px oklch(0.4 0.05 250 / 0.04),
+      0 8px 24px -8px oklch(0.4 0.05 250 / 0.08);
+  }
+
+  .card-float {
+    box-shadow:
+      0 4px 12px oklch(0.4 0.05 250 / 0.06),
+      0 16px 40px -12px oklch(0.4 0.05 250 / 0.16);
+  }
+
+  .fa-num {
+    font-feature-settings: "ss01";
+  }
+}
+
+/* Persian number rendering */
+@keyframes float-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float-pulse { animation: float-pulse 3s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, oklch(0.66 0.14 236 / 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Rich motion for signals UI */
+@keyframes card-in {
+  0% { opacity: 0; transform: translateY(14px) scale(0.97); filter: blur(4px); }
+  60% { filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+@keyframes live-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+@keyframes live-ring {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes draw-line {
+  0% { stroke-dashoffset: 300; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 1px 2px oklch(0.4 0.05 250 / 0.04), 0 8px 24px -8px oklch(0.4 0.05 250 / 0.08); }
+  50% { box-shadow: 0 1px 2px oklch(0.4 0.05 250 / 0.04), 0 12px 32px -8px color-mix(in oklab, var(--primary) 25%, transparent); }
+}
+@keyframes tick-flash-up {
+  0% { background-color: color-mix(in oklab, var(--success) 20%, transparent); }
+  100% { background-color: transparent; }
+}
+@keyframes tick-flash-down {
+  0% { background-color: color-mix(in oklab, var(--danger) 20%, transparent); }
+  100% { background-color: transparent; }
+}
+@keyframes arrow-bounce-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes arrow-bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+@keyframes badge-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.08); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes pill-slide {
+  0% { transform: translateY(6px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-card-in { animation: card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-badge-pop { animation: badge-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-pill-slide { animation: pill-slide 0.35s ease-out both; }
+.animate-glow-pulse { animation: glow-pulse 3.2s ease-in-out infinite; }
+.animate-arrow-up { animation: arrow-bounce-up 1.4s ease-in-out infinite; }
+.animate-arrow-down { animation: arrow-bounce-down 1.4s ease-in-out infinite; }
+.animate-flash-up { animation: tick-flash-up 0.9s ease-out; }
+.animate-flash-down { animation: tick-flash-down 0.9s ease-out; }
+
+.live-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 9999px;
+  background: var(--success);
+  animation: live-dot 1.4s ease-in-out infinite;
+}
+.live-dot::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 9999px;
+  background: var(--success);
+  animation: live-ring 1.4s ease-out infinite;
+}
+
+.spark-path {
+  stroke-dasharray: 300;
+  animation: draw-line 1.4s ease-out both;
+}
+
+.press-scale { transition: transform 0.15s ease; }
+.press-scale:active { transform: scale(0.97); }
+
+/* Telegram-style theme swap: circular reveal via View Transitions API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
